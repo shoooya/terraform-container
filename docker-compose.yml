@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  terraform:
+    container_name: 'terraform'
+    build: ./terraform
+    env_file:
+      - ./.env
+    volumes: 
+      - $GHQ_ROOT:/home/terraform/src
+    tty: true
